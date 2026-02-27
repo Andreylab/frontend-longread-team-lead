@@ -89,4 +89,5 @@ relative, overflow-hidden — позиционирование
 👨‍💻 Авторы
 
 Парубочий Андрей [Andreylab](https://github.com/Andreylab)
+
 Ким Виктория [vaenela](https://github.com/vaenela)
