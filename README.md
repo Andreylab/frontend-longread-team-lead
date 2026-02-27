@@ -1,16 +1,91 @@
-# React + Vite
+# История развития компьютеров 🖥️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Интерактивный веб-сайт, посвященный эволюции компьютерных технологий — от аналитической машины Бэббиджа до современной эры персональных компьютеров.
 
-Currently, two official plugins are available:
+## 📋 О проекте
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Сайт представляет собой хронологическую ленту ключевых эпох в истории компьютеров. Каждый период сопровождается визуальным контентом и описанием важнейших событий и личностей, повлиявших на развитие вычислительной техники.
 
-## React Compiler
+## 🚀 Функциональность
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Хронологическая навигация по эпохам развития компьютеров
+- Адаптивный дизайн для всех устройств
+- Интерактивные элементы с плавными анимациями
+- Визуальное сопровождение (изображения, стилизованные фоны)
 
-## Expanding the ESLint configuration
+## 🛠 Технологии
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** — библиотека для построения интерфейсов
+- **Tailwind CSS** — стилизация и анимации
+- **Vite / Next.js** — сборка и разработка
+- **JavaScript (ES6+)** — логика приложения
+
+## 📂 Структура данных
+
+Проект использует массив объектов с информацией об эпохах:
+
+```javascript
+const eras = [
+  {
+    year: "1840",
+    title: "Аналитическая машина",
+    description: "Чарльз Бэббидж и Ада Лавлейс",
+    image: "/images/analytical-engine.jpg",
+    imageStyle: "rounded-lg shadow-xl"
+  },
+  {
+    year: "1970",
+    title: "Персональная эра",
+    description: "Altair, Apple I и клубы энтузиастов",
+    image: "/images/personal-era.jpg",
+    imageStyle: "grayscale hover:grayscale-0"
+  }
+  // ... другие эпохи
+]
+🎨 Стилизация
+
+Плавные переходы и эффекты при наведении
+
+Адаптивные изображения с контролируемыми размерами
+
+🚀 Установка и запуск
+bash
+# Клонировать репозиторий
+git clone https://github.com/Andreylab/frontend-longread-team-lead.git
+
+# Перейти в папку проекта
+cd longread-project
+
+# Установить зависимости
+npm install
+
+# Запустить в режиме разработки
+npm run dev
+📦 Сборка для продакшена
+bash
+npm run build
+npm run preview
+🔧 Настройка Tailwind CSS
+В проекте используется Tailwind CSS для стилизации. Основные классы:
+
+w-full, max-w-3xl — контроль ширины изображений
+
+transition-all, duration-700, hover:scale-105 — анимации
+
+rounded-2xl, shadow-2xl — визуальное оформление
+
+relative, overflow-hidden — позиционирование
+
+📱 Адаптивность
+Сайт оптимизирован для просмотра на:
+
+Десктопных компьютерах
+
+Планшетах
+
+Мобильных устройствах
+
+👨‍💻 Авторы
+
+Парубочий Андрей [Andreylab](https://github.com/Andreylab)
+Ким Виктория [vaenela](https://github.com/vaenela)
