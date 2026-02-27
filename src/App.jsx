@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div className="relative">
-      {/* Блоки эпох */}
       {eras.map((era, index) => (
         <TimelineEra
           key={era.id}
@@ -21,10 +20,8 @@ function App() {
         />
       ))}
       
-      {/* Индикатор годов */}
       <YearIndicator activeYear={activeEra.year} years={years} />
       
-      {/* Кнопка наверх */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-24 right-4 md:bottom-32 md:right-8 bg-white bg-opacity-20 backdrop-blur-md text-white p-3 rounded-full hover:bg-opacity-30 transition-all z-50"

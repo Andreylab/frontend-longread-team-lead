@@ -22,7 +22,6 @@ const YearIndicator = ({ activeYear, years }) => {
         ))}
       </div>
       
-      {/* Декоративная линия прогресса */}
       <div className="absolute bottom-0 left-0 h-1 bg-blue-500 transition-all duration-300"
            style={{
              width: `${((years.indexOf(activeYear) + 1) / years.length) * 100}%`,

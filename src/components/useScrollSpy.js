@@ -23,7 +23,6 @@ export const useScrollSpy = (eras) => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    // Вызываем сразу для установки начальной эпохи
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);

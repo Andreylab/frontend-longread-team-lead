@@ -1,10 +1,8 @@
 import React, { forwardRef, useEffect } from 'react';
 
 const TimelineEra = forwardRef(({ era, isActive }, ref) => {
-  // Применяем стили к корневому элементу при активации
   useEffect(() => {
     if (isActive) {
-      // Меняем мета-тег theme-color для мобильных браузеров
       const metaThemeColor = document.querySelector('meta[name="theme-color"]');
       if (metaThemeColor) {
         metaThemeColor.setAttribute('content', era.styles.backgroundColor);
@@ -25,7 +23,6 @@ const TimelineEra = forwardRef(({ era, isActive }, ref) => {
       }}
     >
       <div className="max-w-6xl mx-auto text-center">
-        {/* Год (крупно) */}
         <div 
           className="text-8xl md:text-9xl font-bold mb-8 opacity-20 select-none"
           style={{ color: era.yearColor }}
@@ -36,7 +33,6 @@ const TimelineEra = forwardRef(({ era, isActive }, ref) => {
         <h2 className="text-4xl md:text-6xl mb-4 font-bold">{era.title}</h2>
         <p className="text-xl md:text-2xl mb-8 opacity-80">{era.subtitle}</p>
         
-        {/* Изображение */}
         <div className="relative mb-12 overflow-hidden rounded-2xl shadow-2xl">
           <img
             src={era.image}
@@ -45,12 +41,10 @@ const TimelineEra = forwardRef(({ era, isActive }, ref) => {
           />
         </div>
         
-        {/* Описание */}
         <p className={`max-w-3xl mx-auto ${era.textStyle}`}>
           {era.description}
         </p>
         
-        {/* Декоративная линия времени */}
         <div className="mt-16 h-1 w-32 mx-auto rounded-full" 
              style={{ backgroundColor: era.yearColor, opacity: 0.3 }}>
         </div>
