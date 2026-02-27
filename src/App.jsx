@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { eras } from './data/erasData';
+import { useScrollSpy } from './components/useScrollSpy';
+import TimelineEra from './components/TimelineEra';
+import YearIndicator from './components/YearIndicator';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { activeEra, eraRefs } = useScrollSpy(eras);
+  const years = eras.map(era => era.year);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="relative">
+      {/* Блоки эпох */}
+      {eras.map((era, index) => (
+        <TimelineEra
+          key={era.id}
+          era={era}
+          ref={(el) => (eraRefs.current[index] = el)}
+          isActive={activeEra.id === era.id}
+        />
+      ))}
+      
+      {/* Индикатор годов */}
+      <YearIndicator activeYear={activeEra.year} years={years} />
+      
+      {/* Кнопка наверх */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-24 right-4 md:bottom-32 md:right-8 bg-white bg-opacity-20 backdrop-blur-md text-white p-3 rounded-full hover:bg-opacity-30 transition-all z-50"
+        aria-label="Наверх"
+      >
+        ↑
+      </button>
+    </div>
+  );
 }
 
-export default App
+export default App;
